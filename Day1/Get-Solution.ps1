@@ -33,12 +33,12 @@ foreach ($line in $data) {
 
     $currentPosition = $newPosition
 
-    if($currentPosition -lt 0)
-    {
+    while ($currentPosition -lt 0) {
         Write-Output "Wrapping around from $currentPosition to $($currentPosition + 100)"
         $currentPosition += 100
     }
-    elseif($currentPosition -gt 99) {
+
+    while ($currentPosition -gt 99) {
         Write-Output "Wrapping around from $currentPosition to $($currentPosition - 100)"
         $currentPosition -= 100
     }
